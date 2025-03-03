@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>#2.1 Before React</title>
+    <title>React</title>
     <meta charset="UTF-8" />
 </head>
 
@@ -12,26 +12,17 @@
 <!-- React와 ReactDOM CDN 링크 -->
 <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-<script>
+<!-- Babel CDN 링크 (JSX를 JavaScript로 변환) -->
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
     const root = document.getElementById("root");
-    const h3 = React.createElement(
-        "h3",
-        {
-            id: "title",
-            onMouseEnter: () => console.log("mouse enter"),
-        },
-        "Hello, h3");
-    const btn = React.createElement(
-        "button",
-        {
-            onClick:()=> console.log("im clicked"),
-            style: {
-                backgroundColor: "tomato",
-            }
-        },
-        "Click me"
-    );
-    const container = React.createElement("div", null, [h3, btn]);
+    const Title = (
+        <h3 id="title" onMouseEnter={() => console.log("mouse enter")}>Hello, h3</h3>
+    )
+    const Button = (
+        <button onClick={()=> console.log("im clicked")} style={{backgroundColor: "tomato"}}>Click Me</button>
+    )
+    const container = React.createElement("div", null, [Title, Button]);
     ReactDOM.render(container, root);
 </script>
 
