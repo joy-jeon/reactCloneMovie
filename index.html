@@ -2,13 +2,26 @@
 <html>
 
 <head>
-    <title>React</title>
+    <title>#2.1 Before React</title>
     <meta charset="UTF-8" />
 </head>
 
-<body></body>
+<body>
+    <div id="root"></div>
+</body>
 <!-- React와 ReactDOM CDN 링크 -->
 <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-
+<script>
+    const root = document.getElementById("root");
+    const span = React.createElement(
+        "span", 
+        {
+            id: "span-id",
+            style: {color: "red"}
+        }, 
+        "Hello, span"
+    );
+    ReactDOM.render(span, root);
+</script>
 </html>
