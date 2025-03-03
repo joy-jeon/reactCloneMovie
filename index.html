@@ -14,14 +14,25 @@
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 <script>
     const root = document.getElementById("root");
-    const span = React.createElement(
-        "span", 
+    const h3 = React.createElement(
+        "h3",
         {
-            id: "span-id",
-            style: {color: "red"}
-        }, 
-        "Hello, span"
+            id: "title",
+            onMouseEnter: () => console.log("mouse enter"),
+        },
+        "Hello, h3");
+    const btn = React.createElement(
+        "button",
+        {
+            onClick:()=> console.log("im clicked"),
+            style: {
+                backgroundColor: "tomato",
+            }
+        },
+        "Click me"
     );
-    ReactDOM.render(span, root);
+    const container = React.createElement("div", null, [h3, btn]);
+    ReactDOM.render(container, root);
 </script>
+
 </html>
