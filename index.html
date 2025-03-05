@@ -15,20 +15,14 @@
 <!-- Babel CDN 링크 (JSX를 JavaScript로 변환) -->
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <script type="text/babel">
-    const root = document.getElementById("root");
-    function App(){
-        const [counter, setCounter] = React.useState(0);
-        const onClick = () => {
-            setCounter((current) => current + 1);
-        };
+    function App() {
         return (
             <div>
-                <h3>Total clicks: {counter}</h3>
-                <button onClick={onClick}>Click me</button>
+                <h1>SUPER CONVERTER</h1>
             </div>
-            
         );
     }
+    const root = document.getElementById("root");
     ReactDOM.render(<App />, root);
 </script>
 
