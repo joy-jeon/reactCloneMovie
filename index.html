@@ -26,6 +26,7 @@
             <div>
                 <h1 className="h1">SUPER CONVERTER</h1>
 
+                <div>
                 <label htmlFor="minutes">Minutes </label>
                 <input
                     value={minutes}
@@ -34,15 +35,18 @@
                     type="number"
                     onChange={onChange}
                 />
+                </div>
 
                 <h4>입력 시간 {minutes}</h4>
 
+                <div>
                 <label htmlFor="hours">Hours </label>
                 <input
                     id="hours"
                     placeholder="Hours"
                     type="number"
                 />
+                </div>
             </div>
         );
     }
