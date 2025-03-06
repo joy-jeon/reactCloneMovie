@@ -15,9 +15,29 @@
 <!-- Babel CDN 링크 (JSX를 JavaScript로 변환) -->
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <script type="text/babel">
+    function Btn(props) {
+        console.log(props)
+        return (
+            <button 
+                style={{
+                    backgroundColor: "blue",
+                    color: "white",
+                    padding: "10px 20px",
+                    border: 0,
+                    borderRadius: 10,
+                }}
+            >
+            {/* 부모로 부터 받은 데이터로 버튼텍스트 각각 적용 */}
+            {props.banana} 
+            </button>
+        )
+    }
     function App() {
         return (
             <div>
+                {/* Btn({banana: "Save Changes"}) 와 같은 의미 */}
+                <Btn banana="Save Changes" />
+                <Btn banana="Continue" />
             </div>
         );
     }
