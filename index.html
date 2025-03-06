@@ -15,10 +15,11 @@
 <!-- Babel CDN 링크 (JSX를 JavaScript로 변환) -->
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <script type="text/babel">
-    function Btn(props) {
-        console.log(props)
+    function Btn({banana, onClick}) {
+        console.log(banana, "가 실행되었습니다.");
         return (
             <button 
+                onClick={onClick}
                 style={{
                     backgroundColor: "blue",
                     color: "white",
@@ -28,16 +29,19 @@
                 }}
             >
             {/* 부모로 부터 받은 데이터로 버튼텍스트 각각 적용 */}
-            {props.banana} 
+            {banana}
             </button>
         )
     }
+    const MemorizedBtn = React.memo(Btn);
     function App() {
+        const [value, setValue] = React.useState("Save Changes");
+        const changeValue = () => setValue("Revert Changes");
         return (
             <div>
                 {/* Btn({banana: "Save Changes"}) 와 같은 의미 */}
-                <Btn banana="Save Changes" />
-                <Btn banana="Continue" />
+                <MemorizedBtn banana={value} onClick={changeValue} />
+                <MemorizedBtn banana="Continue" />
             </div>
         );
     }
