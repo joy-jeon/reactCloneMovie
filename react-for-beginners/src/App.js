@@ -1,6 +1,12 @@
+import Button from "./Button";
+import styles from "./App.module.css";
+
 function App() {
   return (
-    <div>welcome back!</div>
+    <div>
+      <div className={styles.title}>welcome back!</div>
+      <Button text={"hello"} />
+    </div>
   );
 }
 
