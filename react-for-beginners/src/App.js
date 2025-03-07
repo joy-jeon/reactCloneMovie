@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
   const [counter, setCounter] = useState(0);
   const onClick = () => setCounter((prev) => prev + 1);
-  console.log("새로고침 되고있어요")
+  console.log("매번 새로고침")
+  useEffect(() => {
+    console.log("한번실행")
+  }, []);
   return (
     <div>
       <h1>{counter}</h1>
