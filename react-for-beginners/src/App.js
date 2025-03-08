@@ -16,15 +16,23 @@ function App() {
   }
   console.log(toDos)
   return (
-    <form onSubmit={onSubmit}>
-      <h1>My To Do List ({toDos.length})</h1>
-      <input
-        value={toDo}
-        onChange={onChange}
-        type="text"
-      />
-      <button>버튼</button>
-    </form>
+    <div>
+      <form onSubmit={onSubmit}>
+        <h1>My To Do List ({toDos.length})</h1>
+        <input
+          value={toDo}
+          onChange={onChange}
+          type="text"
+        />
+        <button>버튼</button>
+      </form>
+      <hr />
+      <ul>
+        {/* {toDos.map((item) => item + "번")} */}
+        {toDos.map((item, index) => <li key={index}>{item}</li>)}
+      </ul>
+
+    </div>
   )
 }
 
