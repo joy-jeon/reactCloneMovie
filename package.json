@@ -43,5 +43,5 @@
   "devDependencies": {
     "eslint-config-react-app": "^7.0.1"
   },
-  "homepage": "https://joy-jeon.github.io/reactCloneMovie/react-for-beginners"
+  "homepage": "https://joy-jeon.github.io/reactCloneMovie/"
 }
