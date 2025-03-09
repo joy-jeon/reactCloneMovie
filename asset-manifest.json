@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "/reactCloneMovie/react-for-beginners/static/js/main.12dcde20.js",
-    "index.html": "/reactCloneMovie/react-for-beginners/index.html",
-    "main.12dcde20.js.map": "/reactCloneMovie/react-for-beginners/static/js/main.12dcde20.js.map"
+    "main.js": "/reactCloneMovie/static/js/main.12dcde20.js",
+    "index.html": "/reactCloneMovie/index.html",
+    "main.12dcde20.js.map": "/reactCloneMovie/static/js/main.12dcde20.js.map"
   },
   "entrypoints": [
     "static/js/main.12dcde20.js"
