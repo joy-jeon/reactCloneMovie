@@ -6,7 +6,7 @@ function App() {
   const getMovies = async () => {
     const json = await (
       await fetch(
-        "https://yts.mx/api/v2/list_movies.json?minimum_rating=8.8&sort_by=year"
+        "https://yts.mx/api/v2/list_movies.json?minimum_rating=8&sort_by=year"
       )).json();
 
     setLoading(false)
@@ -18,20 +18,28 @@ function App() {
 
   console.log(movies)
 
-  // useEffect(() => {
-  //   fetch("https://yts.mx/api/v2/list_movies.json?minimum_rating=8.8&sort_by=year")
-  //     .then((response) => response.json())
-  //     .then((movie) => {
-  //       setLoading(false)
-  //       setMovies(movie.data.movies)
-  //     })
-  // }, [])
-
   return (
     <div>
-      {loading ? <h3>로딩중 입니다.</h3> : null}
+      {loading ? (
+        <h3>로딩중 입니다.</h3>
+      ) : (
+        <div>
+          {movies.map((movie) => (
+            <div key={movie.id}>
+              <img src={movie.medium_cover_image} alt="" />
+              <h2>{movie.title}</h2>
+              <p>{movie.summary}</p>
+              <ul>
+                {movie.genres.map((g) => (
+                  <li key={g}>{g}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
-  )
+  );
 }
 
 export default App;
